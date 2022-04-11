@@ -1,5 +1,6 @@
 import { LocationObject } from 'expo-location';
 import { StackScreenProps } from '@react-navigation/stack';
+import { BottomTabScreenProps } from '@react-navigation/bottom-tabs';
 
 export type IStackScreen = {
   Login: {
@@ -13,22 +14,30 @@ export type IStackScreen = {
   };
 };
 
-export type IStackMainApp = {
+export type ITabMainApps = {
   List: {
-    screen?: keyof IStackMainApp;
+    screen?: keyof ITabMainApps;
+  };
+  Add: {
+    screen?: keyof ITabMainApps;
+  };
+};
+
+export type IListStack = {
+  Lists: {
+    screen?: keyof IListStack;
   };
   Detail: {
     id: string;
-    screen?: keyof IStackMainApp;
-  };
-  Add: {
-    screen?: keyof IStackMainApp;
+    screen?: keyof IListStack;
   };
 };
 
 export type IStackScreenProps<T extends keyof IStackScreen> = StackScreenProps<IStackScreen, T>;
 
-export type IStackMainProps<T extends keyof IStackMainApp> = StackScreenProps<IStackMainApp, T>;
+export type ITabMainProps<T extends keyof ITabMainApps> = BottomTabScreenProps<ITabMainApps, T>;
+
+export type IStackListProps<T extends keyof IListStack> = BottomTabScreenProps<IListStack, T>;
 
 export interface IPresensi {
   date: string; // To store the date
@@ -50,4 +59,13 @@ export interface IRegister {
   email: string;
   password: string;
   confirmPassword: string;
+}
+
+export interface IAction<T> {
+  type: string;
+  data: Partial<T>;
+}
+
+export interface ResourceWithId<T> {
+  [uid: string]: T;
 }

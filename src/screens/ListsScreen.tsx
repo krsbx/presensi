@@ -2,7 +2,7 @@ import React, { useRef, useState, useEffect } from 'react';
 import { StyleSheet, KeyboardAvoidingView, View, TextInput } from 'react-native';
 import { Input, Button } from 'react-native-elements';
 
-const LoginScreen = () => {
+const ListScreen = () => {
   return <KeyboardAvoidingView style={styles.container}></KeyboardAvoidingView>;
 };
 
@@ -17,4 +17,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default LoginScreen;
+export default ListScreen;
