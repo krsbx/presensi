@@ -1,6 +1,6 @@
 import React from 'react';
 import * as Location from 'expo-location';
-import { StyleSheet, KeyboardAvoidingView, View, TextInput } from 'react-native';
+import { StyleSheet, KeyboardAvoidingView, View } from 'react-native';
 import { Input, Button } from 'react-native-elements';
 import { postPresensi } from '../utils/actions';
 import { ITabMainProps } from '../utils/interfaces';

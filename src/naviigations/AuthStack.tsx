@@ -1,7 +1,6 @@
 import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { LoginScreen, RegisterScreen } from '../screens';
-import MainContainer from './MainContainer';
+import { LoginScreen, RegisterScreen, ListScreen } from '../screens';
 import { IStackScreen } from '../utils/interfaces';
 
 const AuthStack: React.FC = () => {
@@ -16,7 +15,7 @@ const AuthStack: React.FC = () => {
     >
       <Stack.Screen name="Login" component={LoginScreen} />
       <Stack.Screen name="Register" component={RegisterScreen} />
-      <Stack.Screen name="MainApp" component={MainContainer} />
+      <Stack.Screen name="MainApp" component={ListScreen} />
     </Stack.Navigator>
   );
 };
