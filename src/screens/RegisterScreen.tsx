@@ -37,7 +37,7 @@ const RegisterScreen: React.FC<IStackScreenProps<'Register'>> = ({ navigation })
           <View style={styles.container}>
             <Input
               placeholder="Emails"
-              autoCompleteType={'auto'}
+              autoCompleteType={'email'}
               onChangeText={handleChange('email')}
               onBlur={handleBlur('email')}
               value={values.email}
@@ -48,7 +48,7 @@ const RegisterScreen: React.FC<IStackScreenProps<'Register'>> = ({ navigation })
             />
             <Input
               placeholder="Passwords"
-              autoCompleteType={'auto'}
+              autoCompleteType={'off'}
               onChangeText={handleChange('password')}
               onBlur={handleBlur('password')}
               value={values.password}
@@ -61,7 +61,7 @@ const RegisterScreen: React.FC<IStackScreenProps<'Register'>> = ({ navigation })
             />
             <Input
               placeholder="Konfirmasi Passwords"
-              autoCompleteType={'auto'}
+              autoCompleteType={'off'}
               onChangeText={handleChange('confirmPassword')}
               onBlur={handleBlur('confirmPassword')}
               value={values.confirmPassword}

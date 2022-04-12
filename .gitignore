@@ -68,3 +68,6 @@ buck-out/
 .env
 .env.local
 .env.production
+
+android/app/google-services.json
+android/gradle.properties

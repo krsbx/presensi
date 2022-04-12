@@ -1,6 +1,7 @@
 import { LocationObject } from 'expo-location';
 import { StackScreenProps } from '@react-navigation/stack';
 import { BottomTabScreenProps } from '@react-navigation/bottom-tabs';
+import { FirebaseFirestoreTypes } from '@react-native-firebase/firestore';
 
 export type IStackScreen = {
   Login: {
@@ -40,12 +41,12 @@ export type ITabMainProps<T extends keyof ITabMainApps> = BottomTabScreenProps<I
 export type IStackListProps<T extends keyof IListStack> = BottomTabScreenProps<IListStack, T>;
 
 export interface IPresensi {
-  date: string; // To store the date
+  id: string;
   userId: string; // To store who is the user
   // Store the location coord
   location: LocationObject['coords'];
   // Will filled by the server
-  timestamp: string;
+  timestamp: FirebaseFirestoreTypes.Timestamp;
 }
 
 export interface IUser {}
@@ -67,5 +68,5 @@ export interface IAction<T> {
 }
 
 export interface ResourceWithId<T> {
-  [uid: string]: T;
+  [uid: string | number]: T;
 }

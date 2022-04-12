@@ -1,9 +1,22 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React from 'react';
+import * as Location from 'expo-location';
 import { StyleSheet, KeyboardAvoidingView, View, TextInput } from 'react-native';
 import { Input, Button } from 'react-native-elements';
+import { postPresensi } from '../utils/actions';
+import { ITabMainProps } from '../utils/interfaces';
 
-const AddScreen = () => {
-  return <KeyboardAvoidingView style={styles.container}></KeyboardAvoidingView>;
+const AddScreen: React.FC<ITabMainProps<'Add'>> = ({}) => {
+  const submitPresensi = async () => {
+    await postPresensi({
+      location: (await Location.getCurrentPositionAsync()).coords,
+    });
+  };
+
+  return (
+    <KeyboardAvoidingView style={styles.container}>
+      <Button title={'Rekam Kehadiran!'} onPress={submitPresensi} />
+    </KeyboardAvoidingView>
+  );
 };
 
 const styles = StyleSheet.create({

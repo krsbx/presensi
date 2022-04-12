@@ -27,7 +27,9 @@ const LoginScreen: React.FC<IStackScreenProps<'Login'>> = ({ navigation }) => {
     });
 
     // Remove the listener on unmount
-    return subscribe;
+    return () => {
+      subscribe();
+    };
   });
 
   return (
@@ -44,7 +46,7 @@ const LoginScreen: React.FC<IStackScreenProps<'Login'>> = ({ navigation }) => {
           <View style={styles.container}>
             <Input
               placeholder="Emails"
-              autoCompleteType={'auto'}
+              autoCompleteType={'off'}
               onChangeText={handleChange('email')}
               onBlur={handleBlur('email')}
               value={values.email}
@@ -55,7 +57,7 @@ const LoginScreen: React.FC<IStackScreenProps<'Login'>> = ({ navigation }) => {
             />
             <Input
               placeholder="Passwords"
-              autoCompleteType={'auto'}
+              autoCompleteType={'off'}
               onChangeText={handleChange('password')}
               onBlur={handleBlur('password')}
               value={values.password}
