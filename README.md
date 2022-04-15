@@ -41,4 +41,13 @@
 
 1. Open the app that has been build in ./android/app/build/outputs/apk/release
 1. Transfer the apk file to your phone
-1. Install the apk file as usual
+1. Install the apk file like any normal apk file
+
+# How to install (Alternative)
+
+1. Transfer the apk file in ./build/android to your phone
+1. Install the apk file like any normal apk file
+
+# Note
+
+Make sure to grant the location access permission, sometimes it won't ask the permission automatically, if that happens you need to enable it manually from your device settings
